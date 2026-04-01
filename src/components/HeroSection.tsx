@@ -17,9 +17,10 @@ export default function HeroSection() {
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg hover:scale-105 transition duration-300 flex items-center justify-center overflow-hidden"
+              className="group aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-sm hover:from-gray-700 hover:to-gray-800 transition-all duration-300 flex items-center justify-center overflow-hidden cursor-pointer relative"
             >
-              <div className="text-4xl opacity-50">🔄</div>
+              <div className="text-4xl opacity-30 group-hover:opacity-20 transition-opacity duration-300">🔄</div>
+              <div className="absolute inset-0 border border-white/0 group-hover:border-white/20 transition-all duration-300"></div>
             </div>
           ))}
         </div>

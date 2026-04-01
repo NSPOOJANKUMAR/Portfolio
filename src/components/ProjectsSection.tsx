@@ -36,27 +36,25 @@ export default function ProjectsSection() {
     <section id="work" className="py-32 px-6 lg:px-8 bg-black text-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl lg:text-6xl font-light mb-20 tracking-tight">
-          Featured Work
+          Work
         </h2>
 
-        <div className="space-y-8">
+        <div className="space-y-12">
           {projects.map((project, idx) => (
-            <div
-              key={project.id}
-              className="group"
-            >
+            <div key={project.id} className="group cursor-default">
               {/* Project Image Placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg mb-8 overflow-hidden hover:opacity-80 transition duration-300 flex items-center justify-center">
-                <div className="text-5xl opacity-30">📊</div>
+              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-sm mb-8 overflow-hidden hover:from-gray-700 hover:to-gray-800 transition-all duration-300 flex items-center justify-center relative">
+                <div className="text-6xl opacity-20 group-hover:opacity-10 transition-opacity duration-300">📊</div>
+                <div className="absolute inset-0 border border-white/0 group-hover:border-white/10 transition-all duration-300"></div>
               </div>
 
               {/* Project Content */}
-              <div className="mb-6">
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-4">
-                  <h3 className="text-3xl lg:text-4xl font-light text-white group-hover:text-gray-300 transition duration-300">
+              <div className="mb-8">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+                  <h3 className="text-3xl lg:text-4xl font-light text-white group-hover:text-gray-300 transition duration-300 leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-gray-500 text-sm">0{project.id}</p>
+                  <p className="text-gray-600 text-sm font-light">0{project.id}</p>
                 </div>
                 
                 <p className="text-gray-400 leading-relaxed font-light text-lg mb-6">
@@ -67,7 +65,7 @@ export default function ProjectsSection() {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="text-sm text-gray-500 border border-gray-700 px-3 py-1 rounded-full"
+                      className="text-xs text-gray-500 border border-gray-700 px-3 py-1 rounded-full hover:text-gray-400 hover:border-gray-600 transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -75,7 +73,7 @@ export default function ProjectsSection() {
                 </div>
               </div>
 
-              {idx < projects.length - 1 && <div className="mt-12 border-t border-white/5"></div>}
+              {idx < projects.length - 1 && <div className="mt-16 border-t border-white/5"></div>}
             </div>
           ))}
         </div>
