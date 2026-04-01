@@ -6,7 +6,6 @@ export default function TestimonialsSection() {
       author: "Angela O'Leary",
       title: "HR Consultant Specialist Master",
       company: "Deloitte",
-      icon: "💼"
     },
     {
       id: 2,
@@ -14,41 +13,42 @@ export default function TestimonialsSection() {
       author: "Jonathan Ross Barron",
       title: "Procurement Specialist",
       company: "University of Memphis",
-      icon: "🎓"
     }
   ];
 
   return (
-    <section className="py-20 px-6 lg:px-8 bg-black text-white border-t border-white/10">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-16 tracking-tight">
+    <section className="py-32 px-6 lg:px-8 bg-black text-white border-t border-white/5">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-5xl lg:text-6xl font-light mb-20 tracking-tight">
           What Clients Say
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="p-10 bg-white/5 border border-white/10 rounded-lg hover:border-white/30 hover:bg-white/10 transition"
-            >
-              <div className="flex items-start gap-4 mb-6">
-                <span className="text-4xl">{testimonial.icon}</span>
+            <div key={testimonial.id} className="group">
+              <blockquote className="text-xl lg:text-2xl font-light text-gray-300 leading-relaxed mb-8">
+                "{testimonial.quote}"
+              </blockquote>
+
+              <div className="flex items-center gap-4">
+                {/* Profile Image Placeholder */}
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex-shrink-0 flex items-center justify-center">
+                  <span className="text-2xl">👤</span>
+                </div>
+
+                {/* Author Info */}
                 <div>
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-lg font-light text-white">
                     {testimonial.author}
                   </h3>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-gray-500 font-light text-sm">
                     {testimonial.title}
                   </p>
-                  <p className="text-sm text-blue-400">
+                  <p className="text-blue-400 font-light text-sm">
                     {testimonial.company}
                   </p>
                 </div>
               </div>
-
-              <blockquote className="text-lg text-gray-300 leading-relaxed italic">
-                "{testimonial.quote}"
-              </blockquote>
             </div>
           ))}
         </div>

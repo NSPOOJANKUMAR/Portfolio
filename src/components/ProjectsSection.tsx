@@ -4,62 +4,62 @@ export default function ProjectsSection() {
       id: 1,
       title: "Oracle Fusion Procurement Reporting",
       description: "Built and supported procurement reports using SQL and Oracle Fusion Cloud to ensure accurate financial and supplier data insights",
-      technologies: ["SQL", "Oracle Fusion Cloud", "OTBI", "Data Analytics"],
-      color: "from-blue-600 to-purple-600"
+      technologies: ["SQL", "Oracle Fusion Cloud", "OTBI"],
     },
     {
       id: 2,
-      title: "Oracle HCM SOAR Reporting (Deloitte)",
-      description: "Developed SQL queries and OTBI/BI reports to support workforce and payroll analytics during SOAR implementation",
+      title: "Oracle HCM SOAR Reporting",
+      description: "Developed SQL queries and OTBI/BI reports supporting workforce and payroll analytics during SOAR implementation at Deloitte",
       technologies: ["SQL", "OTBI", "BI Publisher", "Oracle HCM"],
-      color: "from-purple-600 to-pink-600"
     },
     {
       id: 3,
       title: "Healthcare Data Analytics",
       description: "Analyzed healthcare datasets to identify trends and support predictive insights through data preprocessing and reporting",
-      technologies: ["Python", "SQL", "Pandas", "Machine Learning"],
-      color: "from-pink-600 to-red-600"
+      technologies: ["Python", "SQL", "Pandas", "ML"],
     },
     {
       id: 4,
-      title: "Chest X-ray Classification (CNN)",
+      title: "Chest X-ray Classification",
       description: "Built a deep learning model to detect abnormalities in chest X-ray images for automated medical image classification",
-      technologies: ["Python", "TensorFlow", "Keras", "CNN"],
-      color: "from-red-600 to-orange-600"
+      technologies: ["Python", "TensorFlow", "CNN"],
     },
     {
       id: 5,
       title: "Node.js Backend System",
       description: "Developed a backend application with relational database integration for efficient data handling and API operations",
-      technologies: ["Node.js", "SQL", "REST APIs", "Backend"],
-      color: "from-orange-600 to-yellow-600"
+      technologies: ["Node.js", "SQL", "REST APIs"],
     }
   ];
 
   return (
-    <section id="work" className="py-20 px-6 lg:px-8 bg-black text-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-16 tracking-tight">
+    <section id="work" className="py-32 px-6 lg:px-8 bg-black text-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-5xl lg:text-6xl font-light mb-20 tracking-tight">
           Featured Work
         </h2>
 
-        <div className="space-y-12">
-          {projects.map((project) => (
+        <div className="space-y-8">
+          {projects.map((project, idx) => (
             <div
               key={project.id}
-              className="group border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition"
+              className="group"
             >
-              {/* Project Header with Background */}
-              <div className={`bg-gradient-to-r ${project.color} opacity-10 group-hover:opacity-20 transition p-12 h-40 flex items-center`}>
-                <h3 className="text-3xl lg:text-4xl font-bold text-white">
-                  {project.title}
-                </h3>
+              {/* Project Image Placeholder */}
+              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg mb-8 overflow-hidden hover:opacity-80 transition duration-300 flex items-center justify-center">
+                <div className="text-5xl opacity-30">📊</div>
               </div>
 
               {/* Project Content */}
-              <div className="p-8 bg-black/50">
-                <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              <div className="mb-6">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-4">
+                  <h3 className="text-3xl lg:text-4xl font-light text-white group-hover:text-gray-300 transition duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm">0{project.id}</p>
+                </div>
+                
+                <p className="text-gray-400 leading-relaxed font-light text-lg mb-6">
                   {project.description}
                 </p>
                 
@@ -67,13 +67,15 @@ export default function ProjectsSection() {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 bg-white/10 text-white text-sm rounded border border-white/20 group-hover:bg-white/20 transition"
+                      className="text-sm text-gray-500 border border-gray-700 px-3 py-1 rounded-full"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
+
+              {idx < projects.length - 1 && <div className="mt-12 border-t border-white/5"></div>}
             </div>
           ))}
         </div>
